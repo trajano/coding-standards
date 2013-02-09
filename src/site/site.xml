@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://maven.apache.org/DECORATION/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd">
+	<body>
+		<menu ref="parent" inherit="top" />
+		<menu name="Coding Standards">
+			<item href="./checkstyle.html" name="Checkstyle Rules" />
+			<item href="./findbugs.html" name="FindBugs Exceptions" />
+		</menu>
+		<menu ref="reports" inherit="top" />
+	</body>
+</project>
