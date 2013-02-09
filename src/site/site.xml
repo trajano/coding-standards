@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project xmlns="http://maven.apache.org/DECORATION/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd">
+	<skin>
+		<groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-fluido-skin</artifactId>
+		<version>1.3.0</version>
+	</skin>
+	<bannerRight>
+		<src>http://site.trajano.net/trajaon/images/trajano.png</src>
+		<href>http://www.trajano.net</href>
+		<alt>Trajano</alt>
+	</bannerRight>
+	<poweredBy>
+		<logo img="http://site.trajano.net/trajaon/images/powered-by-trajano.png"
+			href="http://www.trajano.net" width="90" height="30" alt="Trajano"
+			name="Trajano" />
+	</poweredBy>
+	<googleAnalyticsAccountId>UA-32387215-1</googleAnalyticsAccountId>
+	<body>
+		<menu ref="parent" inherit="top" />
+		<menu name="Coding Standards">
+			<item href="./checkstyle.html" name="Checkstyle Rules" />
+			<item href="./findbugs.html" name="FindBugs Exceptions" />
+		</menu>
+		<menu ref="reports" inherit="top" />
+	</body>
+	<custom>
+		<fluidoSkin>
+			<gitHub>
+				<projectId>trajano/coding-standards</projectId>
+				<ribbonOrientation>right</ribbonOrientation>
+				<ribbonColor>black</ribbonColor>
+			</gitHub>
+		</fluidoSkin>
+	</custom>
+</project>
+
