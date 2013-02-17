@@ -12,3 +12,5 @@ About Coding Standards
 	* {{{./checkstyle.html}Checkstyle Rules}}
 	
 	* {{{./findbugs.html}FindBugs Exclusions}}
+
+	* {{{./versions.html}Maven Version Rules}}

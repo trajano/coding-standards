@@ -1,0 +1,53 @@
+	------------------------
+	Maven Version Rules	
+	------------------------
+	Archimedes Trajano
+	------------------------
+	
+Maven Version Rules
+
+	These {{{./maven-version-rules.xml}rules}} are used by the 
+	{{{http://mojo.codehaus.org/versions-maven-plugin/}Versions Maven plugin}}.
+
+	These are kept as part of the site as the plugin only supports
+	{{{http://mojo.codehaus.org/versions-maven-plugin/version-rules.html}locating 
+	the rules}} from a URI.
+		
+	The {{{http://mojo.codehaus.org/versions-maven-plugin/}Versions Maven plugin}}
+	can be configured as follows:
+	
++------------+
+<plugin>
+  <groupId>org.codehaus.mojo</groupId>
+  <artifactId>versions-maven-plugin</artifactId>
+  <version>2.0</version>
+  <configuration>
+    <rulesUri>http://trajano.webatu.com/coding-standards/maven-version-rules.xml</rulesUri>
+  </configuration>
+</plugin>
++------------+
+
+* Ignored Version Regular Expression Rules
+
++------------+
+.*\.Alpha\d+
+.*\.Beta\d+
+.*\.CR\d+
++------------+
+
+	Prevents consideration of Alpha, Beta and Candidate releases.
+
+* Specifically Ignored Artifact Versions
+
+    These artifacts and versions are explicitly ignored.
+    
+    * org.apache.maven.plugins:maven-jar-plugin:2.4
+    
+      This version of the plug-in causes problems with M2E on eclipse.
+      
+    * org.jboss.spec:jboss-javaee-6.0:*
+    
+      Any version aside from 1.0.0.Final will cause problems in unit testing.
+  
+    
+    
