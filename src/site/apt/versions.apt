@@ -1,10 +1,10 @@
 	------------------------
-	Maven Version Rules	
+	Maven version rules	
 	------------------------
 	Archimedes Trajano
 	------------------------
 	
-Maven Version Rules
+Maven version rules
 
 	These {{{./maven-version-rules.xml}rules}} are used by the 
 	{{{http://mojo.codehaus.org/versions-maven-plugin/}Versions Maven plugin}}.
@@ -22,7 +22,7 @@ Maven Version Rules
   <artifactId>versions-maven-plugin</artifactId>
   <version>2.0</version>
   <configuration>
-    <rulesUri>http://trajano.webatu.com/coding-standards/maven-version-rules.xml</rulesUri>
+    <rulesUri>http://site.trajano.net/coding-standards/maven-version-rules.xml</rulesUri>
   </configuration>
 </plugin>
 +------------+
