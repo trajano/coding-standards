@@ -4,9 +4,15 @@
 	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd">
 	<body>
 		<menu ref="parent" inherit="top" />
-		<menu name="Coding Standards">
-			<item href="./checkstyle.html" name="Checkstyle Rules" />
-			<item href="./findbugs.html" name="FindBugs Exceptions" />
+
+		<menu name="Editorial standards">
+			<item href="./copy.html" name="Copy standards" />
+		</menu>
+		
+		<menu name="Coding standards">
+			<item href="./checkstyle.html" name="Checkstyle rules" />
+			<item href="./findbugs.html" name="FindBugs exceptions" />
+			<item href="./versions.html" name="Maven version rules" />
 		</menu>
 		<menu ref="reports" inherit="top" />
 	</body>

@@ -1,10 +1,10 @@
 	------------------------
-	FindBugs Exclusions	
+	FindBugs exclusions	
 	------------------------
 	Archimedes Trajano
 	------------------------
 
-FindBugs Exclusions
+FindBugs exclusions
 
 	These rules are used by the 
 	{{{http://mojo.codehaus.org/findbugs-maven-plugin/}FindBugs Maven plugin}}.

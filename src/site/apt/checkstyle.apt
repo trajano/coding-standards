@@ -1,10 +1,10 @@
 	------------------------
-	Checkstyle Rules	
+	Checkstyle rules	
 	------------------------
 	Archimedes Trajano
 	------------------------
 	
-Checkstyle Rules
+Checkstyle rules
 
 	These rules are used by the 
 	{{{http://maven.apache.org/plugins/maven-checkstyle-plugin/}Maven
