@@ -8,12 +8,12 @@
 	</parent>
 	<artifactId>coding-standards</artifactId>
 	<name>Coding Standards</name>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<description>This provides the configuration used by the code analysis plugins.</description>
 	<scm>
 		<connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
 		<developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
-		<tag>coding-standards-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 	<build>
 		<pluginManagement>
