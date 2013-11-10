@@ -14,5 +14,6 @@
 		<exclude name="OnlyOneReturn" />
 		<exclude name="AtLeastOneConstructor" />
 		<exclude name="DontImportSun" />
+		<exclude name="DataflowAnomalyAnalysis"/>
 	</rule>
 </ruleset>
