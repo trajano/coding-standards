@@ -3,7 +3,7 @@ Copy standards
 
 Spelling
 --------
-[Trajano][] is a Canadian company and uses the Canadian English spelling, with
+[Trajano][] is a Canadian company and uses the [Canadian English spelling][1], with
 a fallback to UK English spelling.
 	  
 Capitalisation
@@ -19,15 +19,12 @@ Word usage
 	
 Disambiguated spellings
 -----------------------
-The Canadian English language allows different forms of the same word.  This 
-section specifies the preferred spelling for words
+This section specifies the preferred spelling for words
 
 * `cancelled`
-* `capitalisation`
 * `e-mail`, not `email` or `electronic mail` 
 * `login`, not `logon`
-* `organisation`
 * `plug-in`, not `plugin`
 	
 [Trajano]: http://www.trajano.net/
-	
+[1]: http://www3.telus.net/linguisticsissues/BritishCanadianAmerican.htm "Differences between British, Canadian and American Spelling"

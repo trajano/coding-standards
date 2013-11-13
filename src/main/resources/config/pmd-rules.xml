@@ -14,6 +14,8 @@
 		<exclude name="OnlyOneReturn" />
 		<exclude name="AtLeastOneConstructor" />
 		<exclude name="DontImportSun" />
-		<exclude name="DataflowAnomalyAnalysis"/>
+		<exclude name="DataflowAnomalyAnalysis" />
 	</rule>
+	<exclude-pattern>src/test/java/.*</exclude-pattern>
+	<exclude-pattern>target/.*</exclude-pattern>
 </ruleset>
