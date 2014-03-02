@@ -8,9 +8,10 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>Coding Standards - Coding standards</title>
+		<title>Coding Standards - Checkstyle rules</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
+		<meta name="author" content="Archimedes Trajano" />
 		<meta http-equiv="content-language" content="en" />
 
 		<link href="http://netdna.bootstrapcdn.com/bootswatch/2.3.2/cosmo/bootstrap.min.css" rel="stylesheet" />
@@ -33,7 +34,7 @@
 
 	</head>
 
-	<body class="page-index project-coding-standards" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
+	<body class="page-checkstyle project-coding-standards" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
 
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
@@ -58,21 +59,21 @@
 									<li ><a href="copy.html" title="Copy standards">Copy standards</a></li>
 								</ul>
 							</li>
-							<li class="dropdown">
+							<li class="dropdown active">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Coding standards <b class="caret"></b></a>
 								<ul class="dropdown-menu">
-									<li ><a href="checkstyle.html" title="Checkstyle rules">Checkstyle rules</a></li>
+									<li class="active"><a href="" title="Checkstyle rules">Checkstyle rules</a></li>
 									<li ><a href="findbugs.html" title="FindBugs exceptions">FindBugs exceptions</a></li>
 									<li ><a href="versions.html" title="Maven version rules">Maven version rules</a></li>
 								</ul>
 							</li>
-							<li class="dropdown active">
+							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Project Documentation <b class="caret"></b></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown-submenu ">
 										<a href="project-info.html" title="Project Information">Project Information</a>
 										<ul class="dropdown-menu">
-											<li class="active"><a href="" title="About">About</a></li>
+											<li ><a href="index.html" title="About">About</a></li>
 											<li ><a href="project-summary.html" title="Project Summary">Project Summary</a></li>
 											<li ><a href="team-list.html" title="Project Team">Project Team</a></li>
 											<li ><a href="dependencies.html" title="Dependencies">Dependencies</a></li>
@@ -130,12 +131,109 @@
 	<div class="row">
 		<div class="span12">
 			<div class="body-content">
-<div class="page-header">
- <h1>Coding standards</h1>
-</div> 
-<p>This project defines the standards used for editorial and coding. Organizations use these standards to provide common feel for users.</p> 
-<p>Editorial standards define the rules being followed for user visible text and images.</p> 
-<p>The coding standards are used by code analysis plug-ins.</p>
+<div class="section"> 
+ <div class="page-header">
+  <h2 id="Checkstyle_rules">Checkstyle rules</h2>
+ </div> 
+ <p>These rules are used by the <a class="externalLink" href="http://maven.apache.org/plugins/maven-checkstyle-plugin/">Maven Checkstyle plugin</a>.</p> 
+ <p>The rules are designed to take advantage of the <a class="externalLink" href="http://www.eclipse.org">Eclipse</a> default formatting settings and code clean-up as much as possible.</p> 
+ <p>It also disables some of the styles that the does not make sense in all projects, although it does extend some rules to make things stricter. The following sections itemize the changes to the default Eclipse Checkstyle rule set.</p> 
+ <ul> 
+  <li><a href="#AvoidInlineConditionals">AvoidInlineConditionals</a></li> 
+  <li><a href="#DesignForExtension">DesignForExtension</a></li> 
+  <li><a href="#FileTabCharacter">FileTabCharacter</a></li> 
+  <li><a href="#HiddenField">HiddenField</a></li> 
+  <li><a href="#Imports">Imports</a></li> 
+  <li><a href="#LineLength">LineLength</a></li> 
+  <li><a href="#MagicNumber">MagicNumber</a></li> 
+  <li><a href="#RegexpSinglelineJava">RegexpSinglelineJava</a></li> 
+  <li><a href="#SuppressionCommentFilter">SuppressionCommentFilter</a></li> 
+ </ul> 
+ <div class="section"> 
+  <h3 id="AvoidInlineConditionals"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#AvoidInlineConditionals">AvoidInlineConditionals</a></b></h3> 
+  <p>Although some junior developers may find this confusing, this short cut can help readability with many translations to and from <b>boolean</b> values.</p> 
+  <div class="source"> 
+   <pre>final char flagCharacter = flag ? 'Y' : 'N';
+</pre> 
+  </div> 
+  <p>versus</p> 
+  <div class="source"> 
+   <pre>final char flagCharacter;
+if (flag) {
+  flagCharacter = 'Y';
+} else {
+  flagCharacter = 'N';
+}
+</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="DesignForExtension"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_design.html#DesignForExtension">DesignForExtension</a></b></h3> 
+  <p>Although in theory this check is a good idea, a lot of JEE system components especially JPA cannot function correctly with <tt>final</tt> classes or methods. As such this check is disabled by default. </p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="FileTabCharacter"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter">FileTabCharacter</a></b></h3> 
+  <p>Eclipse formatting uses <i>tab</i> characters by default.</p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="HiddenField"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#HiddenField">HiddenField</a></b></h3> 
+  <p>This rule is enabled with the following modifiers:</p> 
+  <ul> 
+   <li>ignoreConstructorParameter: &quot;true&quot;</li> 
+   <li>ignoreSetter: &quot;true&quot; <p>These modifiers were enabled to allow us to do the following without having to make up new names for the arguments:</p> 
+    <div class="source"> 
+     <pre>public Constructor(final Object field) {
+  this.field = field;
+}
+
+public void setField(final Object field) {
+  this.field = field;
+}
+</pre> 
+    </div></li> 
+  </ul> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Imports"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_imports.html">Imports</a></b></h3> 
+  <p>The rules associated with this ruleset are not just enabled, but flagged as <i>ERROR</i> in the code. This will flag any developers who do not execute <i>Organize Imports</i> on the IDE.</p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="LineLength"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_sizes.html#LineLength">LineLength</a></b></h3> 
+  <p>Line lengths are determined automatically with the Eclipse formatter. That is why this check is disabled.</p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="MagicNumber"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#MagicNumber">MagicNumber</a></b></h3> 
+  <p>Although this check is a good idea. It quickly becomes impractical because it introduces another level of indirection which may lead to many one-off constants that make the source harder to read.</p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="RegexpSinglelineJava"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_regexp.html#RegexpSinglelineJava">RegexpSinglelineJava</a></b></h3> 
+  <p>Only Java code was considered to be checked for regular expressions. These checks all have the parameter <tt>ignoreComments</tt> set to <tt>true</tt>. The primary reason was that <a class="externalLink" href="http://www.eclipse.org/">Eclipse</a> default formatting adds one space at the end of each empty JavaDoc line. The following lists all the rules that use the <b>RegexpSinglelineJava</b> module.</p> 
+  <div class="source"> 
+   <pre>\s+$
+</pre> 
+  </div> 
+  <p>triggers <i>Line has trailing spaces.</i> As noted this is only on Java code.</p> 
+  <div class="source"> 
+   <pre>\bSystem\.out\b
+</pre> 
+  </div> 
+  <p>triggers <i>Outputting to system out.</i> The code should use logging facilities.</p> 
+  <div class="source"> 
+   <pre>\bSystem\.err\b
+</pre> 
+  </div> 
+  <p>triggers <i>Outputting to system err.</i> The code should use logging facilities.</p> 
+  <div class="source"> 
+   <pre>\.printStackTrace\(\)\b
+</pre> 
+  </div> 
+  <p>triggers <i>Printing stack trace.</i> The code should use logging facilities. This only pertains to the no-arg version of <i>printStackTrace</i> as we may use this method to write the stack trace to a stream if needed.</p> 
+ </div> 
+ <div class="section"> 
+  <h3 id="SuppressionCommentFilter"><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config.html#SuppressionCommentFilter">SuppressionCommentFilter</a></b></h3> 
+  <p>This was explicitly enabled to allow developer leads to disable checks on some blocks of the code if there was no way around the issue that would not reduce readability.</p> 
+ </div> 
+</div>
 			</div>
 		</div>
 	</div>
@@ -152,42 +250,7 @@
 					<ul class="nav nav-list">
 						<li class="nav-header">Project Documentation</li>
 						<li >
-							<a href="project-info.html" title="Project Information">Project Information <i class="icon-chevron-down"></i></a>
-							<ul class="nav nav-list">
-						<li class="active">
-							<a href="#" title="About">About</a>
-						</li>
-						<li >
-							<a href="project-summary.html" title="Project Summary">Project Summary</a>
-						</li>
-						<li >
-							<a href="team-list.html" title="Project Team">Project Team</a>
-						</li>
-						<li >
-							<a href="dependencies.html" title="Dependencies">Dependencies</a>
-						</li>
-						<li >
-							<a href="plugins.html" title="Project Plugins">Project Plugins</a>
-						</li>
-						<li >
-							<a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-						</li>
-						<li >
-							<a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-						</li>
-						<li >
-							<a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-						</li>
-						<li >
-							<a href="license.html" title="Project License">Project License</a>
-						</li>
-						<li >
-							<a href="source-repository.html" title="Source Repository">Source Repository</a>
-						</li>
-						<li >
-							<a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-						</li>
-							</ul>
+							<a href="project-info.html" title="Project Information">Project Information <i class="icon-chevron-right"></i></a>
 						</li>
 						<li >
 							<a href="project-reports.html" title="Project Reports">Project Reports <i class="icon-chevron-right"></i></a>
