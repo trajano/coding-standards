@@ -16,6 +16,7 @@
 		<exclude name="DontImportSun" />
 		<exclude name="DataflowAnomalyAnalysis" />
 		<exclude name="AvoidFinalLocalVariable" />
+		<exclude name="AvoidLiteralsInIfCondition" />
 	</rule>
 	<exclude-pattern>src/test/java/.*</exclude-pattern>
 	<exclude-pattern>target/.*</exclude-pattern>
