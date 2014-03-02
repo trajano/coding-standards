@@ -15,6 +15,7 @@
 		<exclude name="AtLeastOneConstructor" />
 		<exclude name="DontImportSun" />
 		<exclude name="DataflowAnomalyAnalysis" />
+		<exclude name="AvoidFinalLocalVariable" />
 	</rule>
 	<exclude-pattern>src/test/java/.*</exclude-pattern>
 	<exclude-pattern>target/.*</exclude-pattern>
