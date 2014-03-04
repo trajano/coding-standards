@@ -13,6 +13,7 @@
 			<item href="./checkstyle.html" name="Checkstyle rules" />
 			<item href="./findbugs.html" name="FindBugs exceptions" />
 			<item href="./versions.html" name="Maven version rules" />
+			<item href="./pom.html" name="Maven project descriptor" />
 		</menu>
 		<menu ref="reports" inherit="top" />
 	</body>
