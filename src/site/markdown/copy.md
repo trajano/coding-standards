@@ -6,7 +6,7 @@ Spelling
 [Trajano][] is a Canadian company and uses the [Canadian English spelling][1], with
 a fallback to UK English spelling.
 	  
-Capitalisation
+Capitalization
 --------------
 * Headers are in sentence caps.
 * "Internet" not "internet"
@@ -25,9 +25,11 @@ This section specifies the preferred spelling for words
 * `cancelled`
 * `e-mail`, not `email` or `electronic mail` 
 * `login`, not `logon`
-* `off-line`, not `offline`
-* `on-line`, not `online`
-* `plug-in`, not `plugin`
+* `offline`, not `off-line`
+* [`online`, not `on-line`][2]
+* `plugin`, not `plug-in`
 	
 [Trajano]: http://www.trajano.net/
 [1]: http://www3.telus.net/linguisticsissues/BritishCanadianAmerican.htm "Differences between British, Canadian and American Spelling"
+[2]: http://grammarist.com/spelling/online-on-line/
+
