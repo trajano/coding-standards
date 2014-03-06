@@ -8,7 +8,7 @@
 
 	<head>
 		<meta charset="utf-8" />
-		<title>Coding Standards - Project Dependencies</title>
+		<title>Coding Standards - Dependency Information</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="" />
 		<meta http-equiv="content-language" content="en" />
@@ -33,7 +33,7 @@
 
 	</head>
 
-	<body class="page-dependencies project-coding-standards" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
+	<body class="page-dependency-info project-coding-standards" data-spy="scroll" data-offset="60" data-target="#toc-scroll-target">
 
 		<div class="navbar navbar-fixed-top">
 			<div class="navbar-inner">
@@ -76,7 +76,7 @@
 											<li ><a href="index.html" title="About">About</a></li>
 											<li ><a href="plugin-management.html" title="Plugin Management">Plugin Management</a></li>
 											<li ><a href="distribution-management.html" title="Distribution Management">Distribution Management</a></li>
-											<li ><a href="dependency-info.html" title="Dependency Information">Dependency Information</a></li>
+											<li class="active"><a href="" title="Dependency Information">Dependency Information</a></li>
 											<li ><a href="source-repository.html" title="Source Repository">Source Repository</a></li>
 											<li ><a href="mail-lists.html" title="Mailing Lists">Mailing Lists</a></li>
 											<li ><a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a></li>
@@ -85,7 +85,7 @@
 											<li ><a href="license.html" title="Project License">Project License</a></li>
 											<li ><a href="team-list.html" title="Project Team">Project Team</a></li>
 											<li ><a href="project-summary.html" title="Project Summary">Project Summary</a></li>
-											<li class="active"><a href="" title="Dependencies">Dependencies</a></li>
+											<li ><a href="dependencies.html" title="Dependencies">Dependencies</a></li>
 										</ul>
 									</li>
 									<li class="dropdown-submenu ">
@@ -133,12 +133,68 @@
 	<div class="row">
 		<div class="span12">
 			<div class="body-content">
-<a name="Project_Dependencies"></a> 
 <div class="section"> 
  <div class="page-header">
-  <h2 id="Project_Dependencies">Project Dependencies</h2>
+  <h2 id="Dependency_Information">Dependency Information</h2>
  </div> 
- <p>There are no dependencies for this project. It is a standalone application that does not depend on any other project.</p> 
+ <a name="Dependency_Information"></a> 
+ <div class="section"> 
+  <h3 id="Apache_Maven">Apache Maven</h3> 
+  <a name="Apache_Maven"></a> 
+  <div class="source"> 
+   <pre>&lt;dependency&gt;
+  &lt;groupId&gt;net.trajano&lt;/groupId&gt;
+  &lt;artifactId&gt;coding-standards&lt;/artifactId&gt;
+  &lt;version&gt;1.1.1&lt;/version&gt;
+&lt;/dependency&gt;</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Apache_Buildr">Apache Buildr</h3> 
+  <a name="Apache_Buildr"></a> 
+  <div class="source"> 
+   <pre>'net.trajano:coding-standards:jar:1.1.1'</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Apache_Ant">Apache Ant</h3> 
+  <a name="Apache_Ant"></a> 
+  <div class="source"> 
+   <pre>&lt;dependency org=&quot;net.trajano&quot; name=&quot;coding-standards&quot; rev=&quot;1.1.1&quot;&gt;
+  &lt;artifact name=&quot;coding-standards&quot; type=&quot;jar&quot; /&gt;
+&lt;/dependency&gt;</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Groovy_Grape">Groovy Grape</h3> 
+  <a name="Groovy_Grape"></a> 
+  <div class="source"> 
+   <pre>@Grapes(
+@Grab(group='net.trajano', module='coding-standards', version='1.1.1')
+)</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Grails">Grails</h3> 
+  <a name="Grails"></a> 
+  <div class="source"> 
+   <pre>compile 'net.trajano:coding-standards:1.1.1'</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="Leiningen">Leiningen</h3> 
+  <a name="Leiningen"></a> 
+  <div class="source"> 
+   <pre>[net.trajano/coding-standards &quot;1.1.1&quot;]</pre> 
+  </div> 
+ </div> 
+ <div class="section"> 
+  <h3 id="SBT">SBT</h3> 
+  <a name="SBT"></a> 
+  <div class="source"> 
+   <pre>libraryDependencies += &quot;net.trajano&quot; %% &quot;coding-standards&quot; % &quot;1.1.1&quot;</pre> 
+  </div> 
+ </div> 
 </div>
 			</div>
 		</div>
@@ -155,7 +211,7 @@
 				<div class="span3 bottom-nav">
 					<ul class="nav nav-list">
 						<li class="nav-header">Project Documentation</li>
-						<li class="active">
+						<li >
 							<a href="project-info.html" title="Project Information">Project Information <i class="icon-chevron-down"></i></a>
 							<ul class="nav nav-list">
 						<li >
@@ -167,8 +223,8 @@
 						<li >
 							<a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
 						</li>
-						<li >
-							<a href="dependency-info.html" title="Dependency Information">Dependency Information</a>
+						<li class="active">
+							<a href="#" title="Dependency Information">Dependency Information</a>
 						</li>
 						<li >
 							<a href="source-repository.html" title="Source Repository">Source Repository</a>
@@ -194,8 +250,8 @@
 						<li >
 							<a href="project-summary.html" title="Project Summary">Project Summary</a>
 						</li>
-						<li class="active">
-							<a href="#" title="Dependencies">Dependencies</a>
+						<li >
+							<a href="dependencies.html" title="Dependencies">Dependencies</a>
 						</li>
 							</ul>
 						</li>
