@@ -45,5 +45,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <plugins>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <relativizeDecorationLinks>false</relativizeDecorationLinks>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>
