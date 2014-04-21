@@ -4,17 +4,17 @@
     <parent>
         <groupId>net.trajano</groupId>
         <artifactId>trajano</artifactId>
-        <version>8-SNAPSHOT</version>
+        <version>8</version>
     </parent>
     <artifactId>coding-standards</artifactId>
-    <version>1.1.2-SNAPSHOT</version>
+    <version>1.1.2</version>
     <name>Coding Standards</name>
     <description>This provides the configuration used by the code analysis plugins.</description>
     <url>http://site.trajano.net/${project.artifactId}</url>
     <scm>
         <connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
         <developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>coding-standards-1.1.2</tag>
         <url>https://github.com/trajano/${project.artifactId}</url>
     </scm>
     <distributionManagement>
