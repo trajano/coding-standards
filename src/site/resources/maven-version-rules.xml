@@ -7,6 +7,7 @@
 		<ignoreVersion type="regex">.*\.Alpha\d+</ignoreVersion>
 		<ignoreVersion type="regex">.*\.Beta\d+</ignoreVersion>
 		<ignoreVersion type="regex">.*\.CR\d+</ignoreVersion>
+		<ignoreVersion type="regex">.*-beta-\d+</ignoreVersion>
 	</ignoreVersions>
 	<rules>
 		<rule groupId="org.apache.maven.plugins" artifactId="maven-jar-plugin">

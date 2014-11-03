@@ -33,6 +33,7 @@ Maven version rules
 .*\.Alpha\d+
 .*\.Beta\d+
 .*\.CR\d+
+.*-beta-\d+
 +------------+
 
 	Prevents consideration of Alpha, Beta and Candidate releases.
