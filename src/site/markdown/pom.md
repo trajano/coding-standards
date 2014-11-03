@@ -13,6 +13,8 @@ Along with a few common sense rules like `groupId` should be before
 The `dependencies`, `plugins`, `extensions` should also be ordered 
 by `scope`, `groupId`, and `artifactId`. 
 
+`scope` is ordered as `compile` > `test` > `runtime` > `provided`.
+
 An [XSLT is provided to clean up the `pom.xml`][1] file and is automatically
 performed by the [Clean POM Maven Plugin][].
 
