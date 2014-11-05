@@ -51,7 +51,7 @@ mvn versions:display-dependency-updates \
     
     * org.apache.maven.plugins:maven-jar-plugin:2.4
     
-      This version of the plug-in causes problems with M2E on eclipse.
+      This version of the plug-in causes problems with M2E on Eclipse.
       
     * org.jboss.spec:jboss-javaee-6.0:*
     
