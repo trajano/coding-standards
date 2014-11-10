@@ -2,13 +2,19 @@
 <ruleset name="Trajano ruleset" xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
-	<rule ref="rulesets/java/logging-java.xml" />
+	<rule ref="rulesets/java/logging-java.xml">
+		<exclude name="MoreThanOneLogger" />
+	</rule>
 	<rule ref="rulesets/java/sunsecure.xml" />
 	<rule ref="rulesets/java/migrating_to_junit4.xml" />
-	<rule ref="rulesets/java/optimizations.xml" />
+	<rule ref="rulesets/java/optimizations.xml">
+		<exclude name="AvoidInstantiatingObjectsInLoops" />
+	</rule>
 	<rule ref="rulesets/java/migrating_to_15.xml" />
 	<rule ref="rulesets/java/basic.xml" />
-	<rule ref="rulesets/java/imports.xml" />
+	<rule ref="rulesets/java/imports.xml">
+		<exclude name="TooManyStaticImports" />
+	</rule>
 	<rule ref="rulesets/java/braces.xml" />
 	<rule ref="rulesets/java/controversial.xml">
 		<exclude name="AtLeastOneConstructor" />
@@ -17,6 +23,7 @@
 		<exclude name="DataflowAnomalyAnalysis" />
 		<exclude name="DontImportSun" />
 		<exclude name="OnlyOneReturn" />
+		<exclude name="NullAssignment"/>
 	</rule>
 	<exclude-pattern>src/test/java/.*</exclude-pattern>
 	<exclude-pattern>target/.*</exclude-pattern>
