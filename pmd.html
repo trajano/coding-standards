@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coding Standards - Dependency Information</title>
+    <title>Coding Standards - PMD Rules</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -51,44 +51,35 @@
 	  <div id="content" class="site-content" role="main">
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
-                <div class="section">
-<h2>Dependency Information<a name="Dependency_Information"></a></h2><a name="Dependency_Information"></a>
-<div class="section">
-<h3>Apache Maven<a name="Apache_Maven"></a></h3><a name="Apache_Maven"></a>
-<div class="source">
-<pre>&lt;dependency&gt;
-  &lt;groupId&gt;net.trajano&lt;/groupId&gt;
-  &lt;artifactId&gt;coding-standards&lt;/artifactId&gt;
-  &lt;version&gt;2.0.0-SNAPSHOT&lt;/version&gt;
-&lt;/dependency&gt;</pre></div></div>
-<div class="section">
-<h3>Apache Buildr<a name="Apache_Buildr"></a></h3><a name="Apache_Buildr"></a>
-<div class="source">
-<pre>'net.trajano:coding-standards:jar:2.0.0-SNAPSHOT'</pre></div></div>
-<div class="section">
-<h3>Apache Ant<a name="Apache_Ant"></a></h3><a name="Apache_Ant"></a>
-<div class="source">
-<pre>&lt;dependency org=&quot;net.trajano&quot; name=&quot;coding-standards&quot; rev=&quot;2.0.0-SNAPSHOT&quot;&gt;
-  &lt;artifact name=&quot;coding-standards&quot; type=&quot;jar&quot; /&gt;
-&lt;/dependency&gt;</pre></div></div>
-<div class="section">
-<h3>Groovy Grape<a name="Groovy_Grape"></a></h3><a name="Groovy_Grape"></a>
-<div class="source">
-<pre>@Grapes(
-@Grab(group='net.trajano', module='coding-standards', version='2.0.0-SNAPSHOT')
-)</pre></div></div>
-<div class="section">
-<h3>Grails<a name="Grails"></a></h3><a name="Grails"></a>
-<div class="source">
-<pre>compile 'net.trajano:coding-standards:2.0.0-SNAPSHOT'</pre></div></div>
-<div class="section">
-<h3>Leiningen<a name="Leiningen"></a></h3><a name="Leiningen"></a>
-<div class="source">
-<pre>[net.trajano/coding-standards &quot;2.0.0-SNAPSHOT&quot;]</pre></div></div>
-<div class="section">
-<h3>SBT<a name="SBT"></a></h3><a name="SBT"></a>
-<div class="source">
-<pre>libraryDependencies += &quot;net.trajano&quot; %% &quot;coding-standards&quot; % &quot;2.0.0-SNAPSHOT&quot;</pre></div></div></div>
+                <h1>PMD Rules</h1>
+<p>Although most rules defined in PMD are enabled, there are a few exceptions that are ignored:</p>
+
+<ul>
+  
+<li><i>[DontImportSun][]</i>: There are some valid occurrences that <tt>sun</tt> libraries  are needed in a large application.</li>
+  
+<li><i>[MoreThanOneLogger][]</i>: There will be occasions that another logger will be  needed, a good one would be to separate fine level debug messages, the  main debug log and business audit logs.</li>
+</ul>
+<p>Some rules are removed to make developer&#x2019;s life a little more sane.</p>
+
+<ul>
+  
+<li><i>[AtLeastOneConstructor][]</i></li>
+  
+<li><i>[AvoidFinalLocalVariable][]</i></li>
+  
+<li><i>[AvoidInstantiatingObjectsInLoops][]</i></li>
+  
+<li><i>[AvoidLiteralsInIfCondition][]</i></li>
+  
+<li><i>[DataflowAnomalyAnalysis][]</i></li>
+  
+<li><i>[NullAssignment][]</i></li>
+  
+<li><i>[OnlyOneReturn][]</i></li>
+  
+<li><i>[TooManyStaticImports][]</i></li>
+</ul>
 	      </div>
 	    </article>
 	  </div>
@@ -145,44 +136,9 @@
       <aside class="widget">
                  <h1 class="widget-title">Project Documentation</h1>
                   <ul>
-                                                                                                                                                                                                                                                                      <li class="expanded">
+                                                                                                                                                                                                                                                            <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
-                    <ul>
-                          <li class="none">
-                          <a href="integration.html" title="Continuous Integration">Continuous Integration</a>
-            </li>
-                          <li class="none">
-                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
-            </li>
-                          <li class="none">
-            <strong>Dependency Information</strong>
-          </li>
-                          <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                          <li class="none">
-                          <a href="issue-tracking.html" title="Issue Tracking">Issue Tracking</a>
-            </li>
-                          <li class="none">
-                          <a href="license.html" title="Project License">Project License</a>
-            </li>
-                          <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
-            </li>
-                          <li class="none">
-                          <a href="plugins.html" title="Project Plugins">Project Plugins</a>
-            </li>
-                          <li class="none">
-                          <a href="team-list.html" title="Project Team">Project Team</a>
-            </li>
-                          <li class="none">
-                          <a href="source-repository.html" title="Source Repository">Source Repository</a>
-            </li>
-                          <li class="none">
-                          <a href="project-summary.html" title="Project Summary">Project Summary</a>
-            </li>
-              </ul>
-        </li>
+                  </li>
                                                                                           <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
