@@ -7,6 +7,7 @@
 
 		<menu name="Editorial standards">
 			<item href="./copy.html" name="Copy standards" />
+			<item href="./versioning.html" name="Versioning standards" />
 		</menu>
 		
 		<menu name="Coding standards">

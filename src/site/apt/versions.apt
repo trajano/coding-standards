@@ -41,9 +41,11 @@ mvn versions:display-dependency-updates \
 .*\.Beta\d+
 .*\.CR\d+
 .*-beta-\d+
+.*-trajano-\d+
 +------------+
 
-	Prevents consideration of Alpha, Beta and Candidate releases.
+	Prevents consideration of Alpha, Beta and Candidate releases.  In addition it also
+	ignores the organization contributions as they are temporary.
 
 * Specifically Ignored Artifact Versions
 
