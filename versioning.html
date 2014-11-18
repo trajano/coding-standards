@@ -66,7 +66,7 @@
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
                 <h1>Versioning standards</h1>
-<p>The organization uses the first three segments of <a class="externalLink" href="http://www.osgi.org/wiki/uploads/Links/SemanticVersioning.pdf">OSGI Semantic Versioning</a> for any artifact that is not POM only.</p>
+<p>The organization uses the first three segments of <a class="externalLink" href="http://semver.org/">Semantic Versioning</a> for any artifact that is not POM only.</p>
 <p>The version segment is organized as follows and all three segments are required.</p>
 
 <div class="source">
@@ -77,13 +77,24 @@
 
 <ul>
   
-<li><tt>MAJOR</tt> version when incompatible API changes are made,</li>
+<li><tt>MAJOR</tt> version when incompatible <i>public</i> API changes are made,</li>
   
 <li><tt>MINOR</tt> version when functionality is added in a backwards-compatible manner, and</li>
   
 <li><tt>PATCH</tt> version when you make backwards-compatible bug or build fixes.</li>
 </ul>
 <div class="section">
+<div class="section">
+<h3><a name="What_constitutes_as_public_API"></a>What constitutes as public API</h3>
+
+<ul>
+  
+<li>In Java sources, any class that is not in a package with <tt>internal</tt></li>
+  
+<li>XML Schema</li>
+  
+<li>WSDL</li>
+</ul></div>
 <div class="section">
 <h3><a name="Development_snapshots"></a>Development snapshots</h3>
 <p>Development snapshots add a <tt>-SNAPSHOT</tt> specifier at the end.</p>
