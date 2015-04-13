@@ -40,6 +40,7 @@ mvn versions:display-dependency-updates \
 .*\.Alpha\d+
 .*\.Beta\d+
 .*\.CR\d+
+.*-beta
 .*-beta-\d+
 .*-trajano-\d+
 +------------+
@@ -58,6 +59,3 @@ mvn versions:display-dependency-updates \
     * org.jboss.spec:jboss-javaee-6.0:*
     
       Any version aside from 1.0.0.Final will cause problems in unit testing.
-  
-    
-    
