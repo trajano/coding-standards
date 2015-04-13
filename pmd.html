@@ -70,27 +70,27 @@
 
 <ul>
   
-<li><i>[DontImportSun][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#DontImportSun]</i>: There are some valid occurrences that <tt>sun</tt> libraries  are needed in a large application.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#DontImportSun">DontImportSun</a></i>: There are some valid occurrences that <tt>sun</tt> libraries  are needed in a large application.</li>
   
-<li><i>[MoreThanOneLogger][pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/logging-java.html#MoreThanOneLogger]</i>: There will be occasions that another logger will be  needed, a good one would be to separate fine level debug messages, the  main debug log and business audit logs.</li>
+<li><i><a href="pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/logging-java.html#MoreThanOneLogger">MoreThanOneLogger</a></i>: There will be occasions that another logger will be  needed, a good one would be to separate fine level debug messages, the  main debug log and business audit logs.</li>
 </ul>
 <p>Some rules are removed to simplify development.</p>
 
 <ul>
   
-<li><i>[AtLeastOneConstructor][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AtLeastOneConstructor]</i>  as adding a constructor that does not do anything more than the default just adds unnecessary code.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AtLeastOneConstructor">AtLeastOneConstructor</a></i>  as adding a constructor that does not do anything more than the default just adds unnecessary code.</li>
   
-<li><i>[AvoidFinalLocalVariable][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AvoidFinalLocalVariable]</i>  as there is no valid reason not to use <tt>final</tt> local variables.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AvoidFinalLocalVariable">AvoidFinalLocalVariable</a></i>  as there is no valid reason not to use <tt>final</tt> local variables.</li>
   
-<li><i>[AvoidInstantiatingObjectsInLoops][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops]</i>  generally there will be a lot of code that will instantiate objects  in the loops. A very common case would be <tt>new String[0]</tt> when  doing a toArray operation.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops">AvoidInstantiatingObjectsInLoops</a></i>  generally there will be a lot of code that will instantiate objects  in the loops. A very common case would be <tt>new String[0]</tt> when  doing a toArray operation.</li>
   
-<li><i>[AvoidLiteralsInIfCondition][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AvoidLiteralsInIfCondition]</i>  by doing this rule blindly we will be introducing more constants  that can be useless especially during string manipulations.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AvoidLiteralsInIfCondition">AvoidLiteralsInIfCondition</a></i>  by doing this rule blindly we will be introducing more constants  that can be useless especially during string manipulations.</li>
   
-<li><i>[DataflowAnomalyAnalysis][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis]</i></li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#DataflowAnomalyAnalysis">DataflowAnomalyAnalysis</a></i></li>
   
-<li><i>[OnlyOneReturn][http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#OnlyOneReturn]</i>  there are many cases where multiple <tt>return</tt> is valid especially  common would be in the begining where simple cases can be handled and  control gets returned back to the caller as soon as possible, otherwise  there may be too much conditional logic that would be added further.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#OnlyOneReturn">OnlyOneReturn</a></i>  there are many cases where multiple <tt>return</tt> is valid especially  common would be in the begining where simple cases can be handled and  control gets returned back to the caller as soon as possible, otherwise  there may be too much conditional logic that would be added further.</li>
   
-<li><i>[TooManyStaticImports][pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/imports.html#TooManyStaticImports]</i>  when using Eclipse to organize imports, this is bound to happen.</li>
+<li><i><a class="externalLink" href="http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/imports.html#TooManyStaticImports">TooManyStaticImports</a></i>  when using Eclipse to organize imports, this is bound to happen.</li>
 </ul>
 	      </div>
 	    </article>
