@@ -3,14 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coding Standards &#x2013; FindBugs exclusions</title>
+    <title>Coding Standards &#x2013; Support levels</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
       @import url("./css/site.css");
     </style>
     <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
-      <meta name="author" content="Archimedes Trajano" />
     <meta name="Date-Revision-yyyymmdd" content="20150424" />
     <meta http-equiv="Content-Language" content="en" />
         
@@ -66,13 +65,11 @@
 	  <div id="content" class="site-content" role="main">
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
-                <div class="section">
-<h2><a name="FindBugs_exclusions"></a>FindBugs exclusions</h2>
-<p>These rules are used by the <a class="externalLink" href="http://mojo.codehaus.org/findbugs-maven-plugin/">FindBugs Maven plugin</a>.</p>
-<p>For FindBugs, only one rule is excluded:</p>
-<div class="source">
-<pre>NM_SAME_SIMPLE_NAME_AS_INTERFACE</pre></div>
-<p>Ignore this bug pattern because generally the interface representing the WebService would match the class of the implementation so the name would appear correctly on the generated endpoint URL.</p></div>
+                <h1>Support levels</h1>
+<p>Unless otherwise noted on a project, these are the support levels for artifacts that are presently released by <a class="externalLink" href="http://www.trajano.net/">Trajano</a>.</p>
+<p>For Java SE projects, the supported version of Java is based on the Java SE level that is currently supported by <a class="externalLink" href="http://en.wikipedia.org/wiki/IBM_WebSphere_Application_Server#Version_history">IBM WebSphere Application Server</a>. There won&#x2019;t be any support guaranteed for JREs older than that version which is presently <tt>6.0</tt> at the time of writing.</p>
+<p>For Maven plug-ins and extensions such as <a class="externalLink" href="http://site.trajano.net/wagon-git">wagon-git</a> and <a class="externalLink" href="http://site.trajano.net/batik-maven-plugin">batik-maven-plugin</a>, the supported version depends on the currently embedded with the <a class="externalLink" href="https://www.eclipse.org/m2e/">M2E</a> that is released with Eclipsei at minimum up to the current stable release of Maven. These are 3.0.4 to 3.2.1 at the time of writing.</p>
+<p>Artifacts must be buildable and usable on Mac, Windows and Linux platforms.</p>
 	      </div>
 	    </article>
 	  </div>
