@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coding Standards &#x2013; Maven Project Descriptor</title>
+    <title>Coding Standards &#x2013; Code Style</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -65,19 +65,138 @@
 	  <div id="content" class="site-content" role="main">
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
-                <h1>Maven Project Descriptor</h1>
-<p>The Maven project descriptor is formatted according to the rules specified in the following URLs.</p>
+                <h1>Code Style</h1>
+<p>The code styles are generally enforced by the <a href="./checkstyle.html">Checkstyle rules</a>, <a href="./pmd.html">PMD rules</a> and <a href="./findbugs.html">FindBugs exceptions</a>. In addition, on the <a class="externalLink" href="http://eclipse.org/m2e/">M2E</a> environment, the <a class="externalLink" href="http://site.trajano.net/m2e-codestyle-maven-plugin/">m2e-codestyle-maven-plugin</a> was developed to set up the general coding styles used by the organization. These code styles are automatically applied on Save actions on the Eclipse IDE where technically possible.</p>
+<p>The intent of this code style implementations is primarily to make merges easier by leaving the formatting and sort order out of the hands of the developers.</p>
+<p>This approach was chosen over <a class="externalLink" href="http://jalopy.sourceforge.net/">Jalopy</a> which would&#x2019;ve been more ideal had it not been for lack of development on the <a class="externalLink" href="http://jalopy.sourceforge.net/">Jalopy</a> project.</p>
+<div class="section">
+<div class="section">
+<h3><a name="Cleanup_rules"></a>Cleanup rules</h3>
+<p>A majority of the code cleanup rules are enabled. These would resolve many immediate issues with <a href="./checkstyle.html">Checkstyle</a>, <a href="./pmd.html">PMD</a> and <a href="./findbugs.html">FindBugs</a>.</p>
 
 <ul>
   
-<li><a class="externalLink" href="http://maven.apache.org/developers/conventions/code.html">http://maven.apache.org/developers/conventions/code.html</a></li>
+<li>Remove <tt>this</tt> qualifier for non static field accesses</li>
   
-<li><a class="externalLink" href="http://maven.apache.org/ref/3.2.1/maven-model/maven.html">http://maven.apache.org/ref/3.2.1/maven-model/maven.html</a></li>
-</ul>
-<p>Along with a few common sense rules like <tt>groupId</tt> should be before <tt>artifactId</tt>.</p>
-<p>The <tt>dependencies</tt>, <tt>plugins</tt>, <tt>extensions</tt> should also be ordered by <tt>scope</tt>, <tt>groupId</tt>, and <tt>artifactId</tt>. </p>
-<p><tt>scope</tt> is ordered as <tt>compile</tt> &gt; <tt>test</tt> &gt; <tt>runtime</tt> &gt; <tt>provided</tt>.</p>
-<p>An <a class="externalLink" href="http://github.com/trajano/cleanpom-maven-plugin/blob/master/src/main/resources/META-INF/pom-clean.xslt">XSLT is provided to clean up the <tt>pom.xml</tt></a> file and is automatically performed by the <a class="externalLink" href="http://site.trajano.net/cleanpom-maven-plugin/">Clean POM Maven Plugin</a>.</p>
+<li>Remove <tt>this</tt> qualifier for non static method accesses</li>
+  
+<li>Change non static accesses to static members using declaring type</li>
+  
+<li>Change indirect accesses to static members to direct accesses (accesses through subtypes)</li>
+  
+<li>Convert control statement bodies to block</li>
+  
+<li>Convert <tt>for</tt> loops to enhanced <tt>for</tt> loops</li>
+  
+<li>Add <tt>final</tt> modifier to method parameters</li>
+  
+<li>Add <tt>final</tt> modifier to local variables</li>
+  
+<li>Use lambda where possible</li>
+  
+<li>Remove unnecessary parentheses</li>
+  
+<li>Remove unused imports</li>
+  
+<li>Add missing <tt>@Override</tt> annotations</li>
+  
+<li>Add missing <tt>@Override</tt> annotations to implementations of interface methods</li>
+  
+<li>Add missing <tt>@Deprecated</tt> annotations</li>
+  
+<li>Add missing serial version ID (generated)</li>
+  
+<li>Remove unnecessary casts</li>
+  
+<li>Remove unnecessary <tt>$NON-NLS$</tt> tags</li>
+  
+<li>Sort all members</li>
+  
+<li>Organize imports</li>
+  
+<li>Format source code</li>
+  
+<li>Remove trailing white spaces on all lines</li>
+</ul></div>
+<div class="section">
+<h3><a name="Braces_and_blank_lines"></a>Braces and blank lines</h3>
+<p>The organization will use the <a class="externalLink" href="http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS">One True Brace Style [1TBS]</a> with <b>4 spaces</b> indents. <i>Tab</i> characters should not be used.</p>
+
+<div class="source">
+<div class="source">
+<pre>if (x &lt; 0) {
+    puts(&quot;Negative&quot;);
+    negative(x);
+} else {
+    puts(&quot;Non-negative&quot;);
+}
+</pre></div></div>
+<p>There is a limit of one for consecutive blank lines and a blank line is introduced at the beginning of the method. Ideally there would be a blank line before the end of the method, but the Eclipse formatter at present does not support this option.</p></div>
+<div class="section">
+<h3><a name="Line_breaks"></a>Line breaks</h3>
+<p>The general rule is to always put a line break even if there is still room with the exception of the first entry. This makes it easier to add new parameters and see the parameter order visually.</p>
+<p>This applies to annotations:</p>
+
+<div class="source">
+<div class="source">
+<pre>@Mojo(name = &quot;configure&quot;,
+    defaultPhase = LifecyclePhase.INITIALIZE,
+    threadSafe = true,
+    requiresOnline = false)
+@SupressWarnings(&quot;unchecked&quot;)
+</pre></div></div>
+<p>This applies to methods and constructors:</p>
+
+<div class="source">
+<div class="source">
+<pre>public boolean process(final Set&lt;? extends TypeElement&gt; annotations,
+    final RoundEnvironment roundEnv) {
+    ...
+}
+
+public boolean processFile(final String fileName) {
+    ...
+}
+</pre></div></div>
+<p>This applies to <tt>enum</tt>s:</p>
+
+<div class="source">
+<div class="source">
+<pre>enum Example {
+    CANCELLED,
+    RUNNING,
+    WAITING,
+    FINISHED
+}
+
+enum Example {
+    GREEN(0, 255, 0),
+    RED(255, 0, 0)
+}
+</pre></div></div>
+<p>This applies to array initializers:</p>
+
+<div class="source">
+<div class="source">
+<pre>private static final String[] DEFAULT_PREFS = { &quot;org.eclipse.core.resources.prefs&quot;,
+    &quot;org.eclipse.jdt.core.prefs&quot;,
+    &quot;org.eclipse.jdt.ui.prefs&quot;,
+    &quot;org.eclipse.wst.jsdt.core.prefs&quot;,
+    &quot;org.eclipse.wst.jsdt.ui.prefs&quot;, };
+</pre></div></div></div>
+<div class="section">
+<h3><a name="Exception_to_line_break_rules"></a>Exception to line break rules</h3>
+<p>The exceptions to the line break rules are present to enable the developer to decide whether to put line breaks or not on specific parts of the code as line breaks do not always make sense in all places and may make the code even harder to read.</p>
+<p>The code formatter does not automatically join wrapped lines so manual wrapping would take place. However, there is still a hard limit of <tt>800</tt> characters per line.</p>
+<p>The wrapping rules for <tt>implements</tt> and <tt>throws</tt> declaration are different as the order does not matter.</p>
+<p>Unlike annotation parameters, there is no additional information aside from the class name which removes the need to read the list of exceptions when maintaining the code.</p>
+<p>In addition function/method calls do not implicitly add the line breaks.</p></div>
+<div class="section">
+<h3><a name="JavaDoc_comments"></a>JavaDoc comments</h3>
+<p>These comments are formatted to a width of <tt>80</tt> characters. They are also applied to header JavaDoc comments which are present in <tt>package-info.java</tt> files.</p></div>
+<div class="section">
+<h3><a name="Block_and_line_comments"></a>Block and line comments</h3>
+<p>These comments are left as-is. The premise is that these are developer notes and formatting should be left the way they understood it to be.</p></div></div>
 	      </div>
 	    </article>
 	  </div>
