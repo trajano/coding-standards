@@ -1,24 +1,20 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<project xmlns="http://maven.apache.org/DECORATION/1.1.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd">
-	<body>
-		<menu ref="parent" inherit="top" />
-
-		<menu name="Editorial standards">
-			<item href="./copy.html" name="Copy standards" />
-			<item href="./versioning.html" name="Versioning standards" />
-		</menu>
-		
-		<menu name="Coding standards">
-			<item href="./support-levels.html" name="Support levels" />
-			<item href="./codestyle.html" name="Code Style" />
-			<item href="./checkstyle.html" name="Checkstyle rules" />
-			<item href="./pmd.html" name="PMD rules" />
-			<item href="./findbugs.html" name="FindBugs exceptions" />
-			<item href="./versions.html" name="Maven version rules" />
-			<item href="./pom.html" name="Maven project descriptor" />
-		</menu>
-		<menu ref="reports" inherit="top" />
-	</body>
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/DECORATION/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd">
+    <body>
+        <menu ref="parent" inherit="top"/>
+        <menu name="Editorial standards">
+            <item href="./copy.html" name="Copy standards"/>
+            <item href="./versioning.html" name="Versioning standards"/>
+        </menu>
+        <menu name="Coding standards">
+            <item href="./support-levels.html" name="Support levels"/>
+            <item href="./codestyle.html" name="Code Style"/>
+            <item href="./checkstyle.html" name="Checkstyle rules"/>
+            <item href="./pmd.html" name="PMD rules"/>
+            <item href="./findbugs.html" name="FindBugs exceptions"/>
+            <item href="./versions.html" name="Maven version rules"/>
+            <item href="./pom.html" name="Maven project descriptor"/>
+        </menu>
+        <menu ref="reports" inherit="top"/>
+    </body>
 </project>
