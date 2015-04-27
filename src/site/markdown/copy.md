@@ -38,7 +38,7 @@ This section specifies the preferred spelling for words
 * `plugin`, not `plug-in`
 	
 [Trajano]: http://www.trajano.net/
-[1]: http://www3.telus.net/linguisticsissues/BritishCanadianAmerican.htm "Differences between British, Canadian and American Spelling"
+[1]: http://www.lukemastin.com/testing/spelling/cgi-bin/database.cgi?action=home
 [2]: http://grammarist.com/spelling/online-on-line/
 [3]: http://english.stackexchange.com/questions/5302/log-in-to-or-log-into-or-login-to
 [4]: http://ux.stackexchange.com/questions/1080/using-sign-in-vs-using-log-in
