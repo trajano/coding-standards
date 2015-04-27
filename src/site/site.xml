@@ -9,6 +9,7 @@
         <menu name="Coding standards">
             <item href="./support-levels.html" name="Support levels"/>
             <item href="./java-code-style.html" name="Java code style"/>
+            <item href="./properties.html" name="Build properties"/>
             <item href="./checkstyle.html" name="Checkstyle rules"/>
             <item href="./pmd.html" name="PMD rules"/>
             <item href="./findbugs.html" name="FindBugs exceptions"/>

@@ -11,7 +11,9 @@ Checkstyle rules
 	Checkstyle plugin}}.
 	
 	The rules are designed to take advantage of the {{{http://www.eclipse.org}Eclipse}}
-	default formatting settings and code clean-up as much as possible.
+	default formatting settings and code clean-up as much as possible.  However, it
+	also works with the {{{java-code-style.html}Java code style}} established
+	in the organization.
   
 	It also disables some of the styles that the does not make sense in all projects,
 	although it does extend some rules to make things stricter. The following
