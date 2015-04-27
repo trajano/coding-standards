@@ -42,6 +42,8 @@ released upstream version and are ingored in the [version rules][].
 For POM only projects, a single digit is used to denote the version with a 
 point version representing bugfixes on POMs released to central.
 
+This rule does not apply to multi-module project root POMs.
+
 [Semantic Versioning]: http://semver.org/
 [version rules]: ./versions.html
 
