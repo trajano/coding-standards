@@ -3,14 +3,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coding Standards &#x2013; Checkstyle rules</title>
+    <title>Coding Standards &#x2013; Build properties</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
       @import url("./css/site.css");
     </style>
     <link rel="stylesheet" href="./css/print.css" type="text/css" media="print" />
-      <meta name="author" content="Archimedes Trajano" />
     <meta name="Date-Revision-yyyymmdd" content="20150427" />
     <meta http-equiv="Content-Language" content="en" />
         
@@ -66,82 +65,86 @@
 	  <div id="content" class="site-content" role="main">
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
-                <div class="section">
-<h2><a name="Checkstyle_rules"></a>Checkstyle rules</h2>
-<p>These rules are used by the <a class="externalLink" href="http://maven.apache.org/plugins/maven-checkstyle-plugin/">Maven Checkstyle plugin</a>.</p>
-<p>The rules are designed to take advantage of the <a class="externalLink" href="http://www.eclipse.org">Eclipse</a> default formatting settings and code clean-up as much as possible. However, it also works with the <a href="./java-code-style.html">Java code style</a> established in the organization.</p>
-<p>It also disables some of the styles that the does not make sense in all projects, although it does extend some rules to make things stricter. The following sections itemize the changes to the default Eclipse Checkstyle rule set.</p>
-<ul>
-<li><a href="#AvoidInlineConditionals">AvoidInlineConditionals</a></li>
-<li><a href="#DesignForExtension">DesignForExtension</a></li>
-<li><a href="#FileTabCharacter">FileTabCharacter</a></li>
-<li><a href="#HiddenField">HiddenField</a></li>
-<li><a href="#Imports">Imports</a></li>
-<li><a href="#LineLength">LineLength</a></li>
-<li><a href="#MagicNumber">MagicNumber</a></li>
-<li><a href="#RegexpSinglelineJava">RegexpSinglelineJava</a></li>
-<li><a href="#SuppressionCommentFilter">SuppressionCommentFilter</a></li></ul>
+                <h1>Build properties</h1>
+<p>Maven allows for additional <a class="externalLink" href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Interpolation">build properties</a> to be defined in the POM under the <tt>&lt;properties&gt;</tt> tag. This documents the standard that would be followed and the general exceptions.</p>
 <div class="section">
-<h3><a name="AvoidInlineConditionals"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#AvoidInlineConditionals">AvoidInlineConditionals</a></b></h3>
-<p>Although some junior developers may find this confusing, this short cut can help readability with many translations to and from <b>boolean</b> values.</p>
-<div class="source">
-<pre>final char flagCharacter = flag ? 'Y' : 'N';</pre></div>
-<p>versus</p>
-<div class="source">
-<pre>final char flagCharacter;
-if (flag) {
-  flagCharacter = 'Y';
-} else {
-  flagCharacter = 'N';
-}</pre></div></div>
 <div class="section">
-<h3><a name="DesignForExtension"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_design.html#DesignForExtension">DesignForExtension</a></b></h3>
-<p>Although in theory this check is a good idea, a lot of JEE system components especially JPA cannot function correctly with <tt>final</tt> classes or methods. As such this check is disabled by default. </p></div>
-<div class="section">
-<h3><a name="FileTabCharacter"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter">FileTabCharacter</a></b></h3>
-<p>Eclipse formatting uses <i>tab</i> characters by default.</p></div>
-<div class="section">
-<h3><a name="HiddenField"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#HiddenField">HiddenField</a></b></h3>
-<p>This rule is enabled with the following modifiers:</p>
-<ul>
-<li>ignoreConstructorParameter: &quot;true&quot;</li>
-<li>ignoreSetter: &quot;true&quot;
-<p>These modifiers were enabled to allow us to do the following without having to make up new names for the arguments:</p>
-<div class="source">
-<pre>public Constructor(final Object field) {
-  this.field = field;
-}
+<h3><a name="General_rules"></a>General rules</h3>
+<p>Note that it is not mandated that all versions should be properties. In fact doing it would create another level of indirection which we would want to avoid especially since it is not common that there would be a dependency version interdependence.</p>
 
-public void setField(final Object field) {
-  this.field = field;
-}</pre></div></li></ul></div>
+<table border="0" class="bodyTable">
+  
+<tr class="a">
+    
+<th>Format</th>
+    
+<th>Example</th>
+    
+<th>Usage</th>
+  </tr>
+  
+<tr class="b">
+    
+<td><i>dependencyGroupId</i><tt>.version</tt></td>
+    
+<td><tt>selenium.version</tt></td>
+    
+<td>
+<p>Versions for two or more dependencies that are tied to one another. 
+        The <i>dependencyGroupId</i> would be the last component of the 
+	<tt>groupId</tt> for example <tt>org.seleniumhq.selenium</tt> 
+	would just be <tt>selenium</tt>.</p>
+
+        
+<p>Should there be a plugin that relies on the same version as a
+        dependency, then only use the dependency version rather than 
+        making a new property for the plugin.</p></td>
+  </tr>
+  
+<tr class="a">
+    
+<td><i>mainPluginId</i><tt>-plugin.version</tt></td>
+    
+<td><tt>surefire-plugin.version</tt></td>
+    
+<td>Versions for two or more plugins that are tied to one another.
+        The *mainPluginId* is generally derived from the shortest 
+        possible segment on the `artifactId`.</td>
+  </tr>
+</table></div>
 <div class="section">
-<h3><a name="Imports"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_imports.html">Imports</a></b></h3>
-<p>The rules associated with this ruleset are not just enabled, but flagged as <i>ERROR</i> in the code. This will flag any developers who do not execute <i>Organize Imports</i> on the IDE.</p></div>
-<div class="section">
-<h3><a name="LineLength"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_sizes.html#LineLength">LineLength</a></b></h3>
-<p>Line lengths are determined automatically with the Eclipse formatter. That is why this check is disabled.</p></div>
-<div class="section">
-<h3><a name="MagicNumber"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_coding.html#MagicNumber">MagicNumber</a></b></h3>
-<p>Although this check is a good idea. It quickly becomes impractical because it introduces another level of indirection which may lead to many one-off constants that make the source harder to read.</p></div>
-<div class="section">
-<h3><a name="RegexpSinglelineJava"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config_regexp.html#RegexpSinglelineJava">RegexpSinglelineJava</a></b></h3>
-<p>Only Java code was considered to be checked for regular expressions. These checks all have the parameter <tt>ignoreComments</tt> set to <tt>true</tt>. The primary reason was that <a class="externalLink" href="http://www.eclipse.org/">Eclipse</a> default formatting adds one space at the end of each empty JavaDoc line. The following lists all the rules that use the <b>RegexpSinglelineJava</b> module.</p>
-<div class="source">
-<pre>\s+$</pre></div>
-<p>triggers <i>Line has trailing spaces.</i> As noted this is only on Java code.</p>
-<div class="source">
-<pre>\bSystem\.out\b</pre></div>
-<p>triggers <i>Outputting to system out.</i> The code should use logging facilities.</p>
-<div class="source">
-<pre>\bSystem\.err\b</pre></div>
-<p>triggers <i>Outputting to system err.</i> The code should use logging facilities.</p>
-<div class="source">
-<pre>\.printStackTrace\(\)\b</pre></div>
-<p>triggers <i>Printing stack trace.</i> The code should use logging facilities. This only pertains to the no-arg version of <i>printStackTrace</i> as we may use this method to write the stack trace to a stream if needed.</p></div>
-<div class="section">
-<h3><a name="SuppressionCommentFilter"></a><b><a class="externalLink" href="http://checkstyle.sourceforge.net/config.html#SuppressionCommentFilter">SuppressionCommentFilter</a></b></h3>
-<p>This was explicitly enabled to allow developer leads to disable checks on some blocks of the code if there was no way around the issue that would not reduce readability.</p></div></div>
+<h3><a name="Specific_exception_rules"></a>Specific exception rules</h3>
+
+<table border="0" class="bodyTable">
+  
+<tr class="a">
+    
+<th>Format</th>
+    
+<th>Usage</th>
+  </tr>
+  
+<tr class="b">
+    
+<td><tt>jdk.version</tt></td>
+    
+<td>Version of the JDK used in [maven-compiler-plugin][1] or [maven-pmd-plugin][2].</td>
+  </tr>
+  
+<tr class="a">
+    
+<td><tt>maven.version</tt></td>
+    
+<td>Version of the Maven API when working with plugins.</td>
+  </tr>
+  
+<tr class="b">
+    
+<td><tt>coding-standards.version</tt></td>
+    
+<td>Version of the [coding standards][3] being enforced by the plugins.</td>
+  </tr>
+</table></div></div>
 	      </div>
 	    </article>
 	  </div>
