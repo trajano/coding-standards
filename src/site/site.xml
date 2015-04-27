@@ -8,7 +8,7 @@
         </menu>
         <menu name="Coding standards">
             <item href="./support-levels.html" name="Support levels"/>
-            <item href="./codestyle.html" name="Code Style"/>
+            <item href="./java-code-style.html" name="Java code style"/>
             <item href="./checkstyle.html" name="Checkstyle rules"/>
             <item href="./pmd.html" name="PMD rules"/>
             <item href="./findbugs.html" name="FindBugs exceptions"/>

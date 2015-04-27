@@ -1,5 +1,5 @@
-Code Style
-==========
+Java code style
+===============
 
 The code styles are generally enforced by the [Checkstyle rules][1],
 [PMD rules][2] and [FindBugs exceptions][3].  In addition, on the [M2E][4]
