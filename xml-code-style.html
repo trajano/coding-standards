@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Coding Standards &#x2013; Support levels</title>
+    <title>Coding Standards &#x2013; XML standards</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -65,11 +65,27 @@
 	  <div id="content" class="site-content" role="main">
 	    <article class="page type-page status-publish hentry">
 	      <div class="entry-content">
-                <h1>Support levels</h1>
-<p>Unless otherwise noted on a project, these are the support levels for artifacts that are presently released by <a class="externalLink" href="http://www.trajano.net/">Trajano</a>.</p>
-<p>For Java SE projects, the supported version of Java is based on the Java SE level that is currently supported by <a class="externalLink" href="http://en.wikipedia.org/wiki/IBM_WebSphere_Application_Server#Version_history">IBM WebSphere Application Server</a>. There won&#x2019;t be any support guaranteed for JREs older than that version which is presently <tt>6.0</tt> at the time of writing.</p>
-<p>For Maven plug-ins and extensions such as <a class="externalLink" href="http://site.trajano.net/wagon-git">wagon-git</a> and <a class="externalLink" href="http://site.trajano.net/batik-maven-plugin">batik-maven-plugin</a>, the supported version depends on the currently embedded with the <a class="externalLink" href="https://www.eclipse.org/m2e/">M2E</a> that is released with Eclipsei at minimum up to the current stable release of Maven. These are 3.0.4 to 3.2.1 at the time of writing.</p>
-<p>Artifacts must be buildable and usable on Mac, Windows and Linux platforms.</p>
+                <h1>XML standards</h1>
+<p>The XML rules apply only to hand written source XMLs. This applies to <tt>XSLT</tt> and <tt>XSD</tt> files as well.</p>
+
+<ul>
+  
+<li>The XML must be in UTF-8 encoding.</li>
+  
+<li>
+<p>It must start with an XML declaration of UTF-8 encoding</p>
+<p>&lt;?xml version=&#x201c;1.0&#x201d; encoding=&#x201c;UTF-8&#x201d;?&gt; </p></li>
+  
+<li>
+<p>It should not contain any <i>tab</i> characters.</p></li>
+  
+<li>4-space indent</li>
+  
+<li>It must end with a blank line.</li>
+  
+<li>Must not have any trailing spaces.</li>
+</ul>
+<p>XML files are formatted using the <a class="externalLink" href="http://site.trajano.net/cleanpom-maven-plugin.">cleanpom-maven-plugin:cleanxml</a> goal should satisfy the XML standards.</p>
 	      </div>
 	    </article>
 	  </div>
