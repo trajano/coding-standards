@@ -1,7 +1,7 @@
 Build properties
 ================
 
-Maven allows for additional [build properties][1] to be defined in the POM
+Maven allows for additional [build properties][1] to be defined in the [POM][2]
 under the `<properties>` tag.  This documents the standard that would be
 followed and the general exceptions.
 
@@ -48,7 +48,9 @@ version interdependence.
   </tr>
   <tr>
     <td><code>jdk.version</code></td>
-    <td>Version of the JDK used in [maven-compiler-plugin][1] or [maven-pmd-plugin][2].</td>
+    <td>Version of the JDK used in [maven-compiler-plugin][1] or [maven-pmd-plugin][2].
+        The wording <code>jdk</code> was used as it represents 1.x rather than the
+	marketting terms 6.0, 7.0, 8.0 in which case that would be <code>java.version</code>.</td>
   </tr>
   <tr>
     <td><code>maven.version</code></td>
@@ -61,3 +63,4 @@ version interdependence.
 </table>
 
 [1]: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Interpolation
+[2]: ./pom.html
