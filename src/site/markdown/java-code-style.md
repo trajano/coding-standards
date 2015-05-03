@@ -12,8 +12,13 @@ The intent of this code style implementations is primarily to make merges
 easier by leaving the formatting and sort order out of the hands of the
 developers.
 
-This approach was chosen over [Jalopy][6] which would've been more ideal
-had it not been for lack of development on the [Jalopy][6] project.
+[m2e-codestyle-maven-plugin][5] will also reformat the code using the formatting
+rules only (i.e. cleanup rules are not executed) during builds to ensure that
+formatting is consistent much like [Jalopy][6] would
+have done.  [Jalopy][6] would've been more ideal had it not been for lack
+of development on the [Jalopy][6] project.
+
+These rules are codified as XMLs that can be imported into Eclipse as-is.
 
 ### Cleanup rules
 
@@ -42,7 +47,7 @@ many immediate issues with [Checkstyle][1], [PMD][2] and [FindBugs][3].
 * Format source code
 * Remove trailing white spaces on all lines
 
-### Braces and blank lines
+### Indents, braces and blank lines
 
 The organization will use the [One True Brace Style [1TBS]][7] with
 **4 spaces** indents.  *Tab* characters should not be used.
@@ -53,6 +58,9 @@ The organization will use the [One True Brace Style [1TBS]][7] with
     } else {
         puts("Non-negative");
     }
+
+Code scope is denoted consistently by moving forward by only
+**one indent**.
 
 There is a limit of one for consecutive blank lines and a blank line is
 introduced at the beginning of the method.  Ideally there would be a blank
@@ -106,6 +114,42 @@ This applies to array initializers:
         "org.eclipse.wst.jsdt.core.prefs",
         "org.eclipse.wst.jsdt.ui.prefs", };
 
+This applies to super interfaces:
+
+    public class DtdResolver implements
+        EntityResolver,
+        ContentHandler {
+        ...
+    }
+
+This applies to `throws` declarations:
+
+    private TransformerHandler buildHandlerChain(
+        final SAXTransformerFactory tf,
+        final OutputStream outputStream)
+            throws IOException,
+            TransformerException {
+        ...
+    }
+
+### Position of operators when doing line breaks
+
+The position of operator characters short of `,` should be on the beginning
+of the wrapped line for example:
+
+    int foo = 1
+        + 2
+        + 3;
+
+This also applies in multi-catch
+
+    try {
+        ...
+    } catch (final SAXException
+        | IOException e) {
+        ...
+    }
+
 ### Exception to line break rules
 
 The exceptions to the line break rules are present to enable the developer
@@ -117,22 +161,15 @@ The code formatter does not automatically join wrapped lines so manual
 wrapping would take place.  However, there is still a hard limit of
 `800` characters per line.
 
-The wrapping rules for `implements` and `throws` declaration are different
-as the order does not matter.
-
-Unlike annotation parameters, there is no additional information aside from
-the class name which removes the need to read the list of exceptions when
-maintaining the code.
-
 In addition function/method calls do not implicitly add the line breaks.
 
-### JavaDoc comments
+### JavaDoc and block comments
 
 These comments are formatted to a width of `80` characters.  They are
-also applied to header JavaDoc comments which are present in 
+also applied to header JavaDoc comments which are present in
 `package-info.java` files.
 
-### Block and line comments
+### Line comments
 
 These comments are left as-is.  The premise is that these are developer
 notes and formatting should be left the way they understood it to be.
