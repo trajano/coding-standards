@@ -19,7 +19,7 @@ Some rules are removed to simplify development.
 * *[AvoidInstantiatingObjectsInLoops](http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/optimizations.html#AvoidInstantiatingObjectsInLoops)*
   generally there will be a lot of code that will instantiate objects
   in the loops.  A very common case would be `new String[0]` when
-  doing a toArray operation.
+  doing a `toArray()` operation.
 * *[AvoidLiteralsInIfCondition](http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#AvoidLiteralsInIfCondition)*
   by doing this rule blindly we will be introducing more constants
   that can be useless especially during string manipulations.

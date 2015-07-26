@@ -34,8 +34,8 @@ version interdependence.
     <td><em>mainPluginId</em><code>-plugin.version</code></td>
     <td><code>surefire-plugin.version</code></td>
     <td>Versions for two or more plugins that are tied to one another.
-        The *mainPluginId* is generally derived from the shortest 
-        possible segment on the `artifactId`.</td>
+        The <em>mainPluginId</em> is generally derived from the shortest 
+        possible segment on the <code>artifactId</code>.</td>
   </tr>
 </table>
 
@@ -48,8 +48,9 @@ version interdependence.
   </tr>
   <tr>
     <td><code>jdk.version</code></td>
-    <td>Version of the JDK used in [maven-compiler-plugin][1] or [maven-pmd-plugin][2].
-        The wording <code>jdk</code> was used as it represents 1.x rather than the
+    <td>Version of the JDK used in <a href="http://maven.apache.org/plugins/maven-compiler-plugin/">maven-compiler-plugin</a> 
+        and <a href="http://maven.apache.org/plugins/maven-pmd-plugin/">maven-pmd-plugin</a>.
+        The wording <code>jdk</code> was used as it has a value of <code>1.x</code> rather than the
 	marketting terms 6.0, 7.0, 8.0 in which case that would be <code>java.version</code>.</td>
   </tr>
   <tr>
@@ -64,3 +65,4 @@ version interdependence.
 
 [1]: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Interpolation
 [2]: ./pom.html
+[3]: http://site.trajano.net/coding-standards/

@@ -65,7 +65,11 @@ if (flag) {
 
 * <<{{{http://checkstyle.sourceforge.net/config_whitespace.html#FileTabCharacter}FileTabCharacter}}>>
 
-    Eclipse formatting uses <tab> characters by default.
+    Eclipse formatting uses <tab> characters by default.  To prevent having
+    to reconfigure Eclipse, this was disabled.  However, the 
+    {{{http://site.trajano.net/m2e-codestyle-maven-plugin/}M2E Codestyle Maven Plugin}}
+    combined with the {{{./java-code-style.html}Java code style}} will ensure
+    that spaces are already used.
   
 * <<{{{http://checkstyle.sourceforge.net/config_coding.html#HiddenField}HiddenField}}>>
 

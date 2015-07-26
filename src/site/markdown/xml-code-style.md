@@ -7,7 +7,9 @@ The XML rules apply only to hand written source XMLs.  This applies to
 * The XML must be in UTF-8 encoding.
 * It must start with an XML declaration of UTF-8 encoding
 
-    <?xml version="1.0" encoding="UTF-8"?>  
+<pre>
+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</pre>
 
 * It should not contain any *tab* characters.
 * 4-space indent

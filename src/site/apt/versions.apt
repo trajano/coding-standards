@@ -34,7 +34,7 @@ mvn versions:display-dependency-updates \
   -Dmaven.version.rules=http://site.trajano.net/coding-standards/maven-version-rules.xml
 +------------+
 
-* Ignored Version Regular Expression Rules
+* Ignored version regular expression rules
 
 +------------+
 .*\.Alpha\d+
@@ -48,7 +48,7 @@ mvn versions:display-dependency-updates \
 	Prevents consideration of Alpha, Beta and Candidate releases.  In addition it also
 	ignores the organization contributions as they are temporary.
 
-* Specifically Ignored Artifact Versions
+* Explicitly ignored artifact versions
 
     These artifacts and versions are explicitly ignored.
     

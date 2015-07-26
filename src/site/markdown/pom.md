@@ -5,7 +5,7 @@ The Maven project descriptor is formatted according to the rules specified in
 the following URLs.
 
 * http://maven.apache.org/developers/conventions/code.html
-* http://maven.apache.org/ref/3.2.1/maven-model/maven.html
+* http://maven.apache.org/ref/3.3.3/maven-model/maven.html
 
 Along with a few common sense rules like `groupId` should be before 
 `artifactId`.
