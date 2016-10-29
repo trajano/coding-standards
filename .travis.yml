@@ -1,0 +1,11 @@
+language: java
+jdk: oraclejdk8
+sudo: false
+cache:
+- maven
+addons:
+  sonarqube: true
+env:
+  global:
+  - secure: hI1Uc20pz/JSSYw34Z2YjiXkSytku9UNfWPt8LTMTqZtL0DuNLrMhqzyVmT3us2Sb6+8NNGq8Ga+MIIhnJZEQJZ7Y+itMPr+2bML7JZ8kmrHeGCOl7XLXUxBfLe6JT7YxAJj6zk/H8SYwo9dF3ml1jOCpejzFB2a5zroEeAlNFw=
+script: mvn clean install sonar:sonar -Dsonar.login=$SONAR_TOKEN
