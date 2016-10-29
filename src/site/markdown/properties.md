@@ -39,30 +39,14 @@ version interdependence.
   </tr>
 </table>
 
-### Specific exception rules
+### Exceptions
 
-<table>
-  <tr>
-    <th>Format</th>
-    <th>Usage</th>
-  </tr>
-  <tr>
-    <td><code>jdk.version</code></td>
-    <td>Version of the JDK used in <a href="http://maven.apache.org/plugins/maven-compiler-plugin/">maven-compiler-plugin</a> 
-        and <a href="http://maven.apache.org/plugins/maven-pmd-plugin/">maven-pmd-plugin</a>.
-        The wording <code>jdk</code> was used as it has a value of <code>1.x</code> rather than the
-	marketting terms 6.0, 7.0, 8.0 in which case that would be <code>java.version</code>.</td>
-  </tr>
-  <tr>
-    <td><code>maven.version</code></td>
-    <td>Version of the Maven API when working with plugins.</td>
-  </tr>
-  <tr>
-    <td><code>coding-standards.version</code></td>
-    <td>Version of the [coding standards][3] being enforced by the plugins.</td>
-  </tr>
-</table>
+* `jdk.version` the version of the JDK used in [maven-compiler-plugin][] and [maven-pmd-plugin][].  The wording <code>jdk</code> was used as it has a value of <code>1.x</code> rather than the marketting terms 6.0, 7.0, 8.0 in which case that would `java.version`.
+* `maven.version` the version of the Maven API when working with plugins.
+* `coding-standards.version` the version of the [coding standards][3] being enforced by the plugins.
 
 [1]: https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#Project_Interpolation
 [2]: ./pom.html
 [3]: http://site.trajano.net/coding-standards/
+[maven-compiler-plugin]: http://maven.apache.org/plugins/maven-compiler-plugin/
+[maven-pmd-plugin]: http://maven.apache.org/plugins/maven-pmd-plugin/

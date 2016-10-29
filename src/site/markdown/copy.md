@@ -31,12 +31,12 @@ This section specifies the preferred spelling for words
 
 * `cancelled`
 * `e-mail`, not `email` or `electronic mail` 
-* [`log in`, not `logon` or `login`][3] if used as a verb, `login` can be used as a noun or adjective.
-* `log out`, not `logoff` or `logout`
+* [`log in`, not `logon` or `login`][3] if used as a verb, `login` can be used as a noun or adjective.  Note that "Sign in" should be used when possible. 
+* `log out`, not `logoff` or `logout`.  Note that "Sign out" should be used when possible.
 * `offline`, not `off-line`
 * [`online`, not `on-line`][2]
 * `plugin`, not `plug-in`
-	
+
 [Trajano]: http://www.trajano.net/
 [1]: http://www.lukemastin.com/testing/spelling/cgi-bin/database.cgi?action=home
 [2]: http://grammarist.com/spelling/online-on-line/
