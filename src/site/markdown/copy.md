@@ -10,7 +10,7 @@ to the programming language applied.
 
 [Trajano][] is a Canadian company and uses the [Canadian English spelling][1], with
 a fallback to UK English spelling.
-	  
+
 ### Capitalization
 
 * Headers are in sentence caps.
@@ -22,20 +22,21 @@ a fallback to UK English spelling.
 * ["Sign in" not "Log in"][4]
 * ["Sign out" not "Log out"][4]
 * "search Google" not "googling"
-* "start" and "end" for periods (e.g. "start date" and "end date"), not 
+* "start" and "end" for periods (e.g. "start date" and "end date"), not
   "to/from" or "begin/finish"
-	
+
 ### Disambiguated spellings
 
 This section specifies the preferred spelling for words
 
 * `cancelled`
-* `e-mail`, not `email` or `electronic mail` 
-* [`log in`, not `logon` or `login`][3] if used as a verb, `login` can be used as a noun or adjective.  Note that "Sign in" should be used when possible. 
+* `e-mail`, not `email` or `electronic mail`
+* [`log in`, not `logon` or `login`][3] if used as a verb, `login` can be used as a noun or adjective.  Note that "Sign in" should be used when possible.
 * `log out`, not `logoff` or `logout`.  Note that "Sign out" should be used when possible.
 * `offline`, not `off-line`
 * [`online`, not `on-line`][2]
 * `plugin`, not `plug-in`
+* `open source`, neither `open-source` nor `opensource`.  Using the capitalization standard from [Open Source Initiative](https://opensource.org/).
 
 [Trajano]: http://www.trajano.net/
 [1]: http://www.lukemastin.com/testing/spelling/cgi-bin/database.cgi?action=home
