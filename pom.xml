@@ -10,20 +10,23 @@
     <version>2.2.0-SNAPSHOT</version>
     <name>Coding Standards</name>
     <description>This provides the configuration used by the code analysis plugins.</description>
-    <url>http://site.trajano.net/${project.artifactId}</url>
+    <url>http://site.trajano.net/${repo.id}/</url>
     <scm>
-        <connection>scm:git:https://github.com/trajano/${project.artifactId}</connection>
-        <developerConnection>scm:git:ssh://git@github.com/trajano/${project.artifactId}.git</developerConnection>
+        <connection>scm:git:https://github.com/trajano/${repo.id}.git</connection>
+        <developerConnection>scm:git:https://github.com/trajano/${repo.id}.git</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/trajano/${project.artifactId}</url>
+        <url>https://github.com/trajano/${repo.id}</url>
     </scm>
     <distributionManagement>
         <site>
-            <id>gh-pages</id>
-            <name>Trajano Github Pages</name>
-            <url>github:http://site.trajano.net/${project.artifactId}/</url>
+            <id>trajano-site</id>
+            <name>Trajano Maven Sites</name>
+            <url>sftp://site.trajano.net:6022/s/${repo.id}/</url>
         </site>
     </distributionManagement>
+    <properties>
+        <repo.id>coding-standards</repo.id>
+    </properties>
     <build>
         <resources>
             <resource>
@@ -63,5 +66,12 @@
                 </configuration>
             </plugin>
         </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>2.12</version>
+            </extension>
+        </extensions>
     </build>
 </project>
