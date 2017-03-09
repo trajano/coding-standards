@@ -1,11 +1,43 @@
+branches:
+  only:
+  - master
+  - "/^coding-standards-[\\d\\.]+$/"
 language: java
-jdk: oraclejdk8
+jdk:
+- oraclejdk8
 sudo: false
 cache:
-- maven
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.sonar/cache"
 addons:
+  apt:
+    packages:
+    - graphviz
   sonarqube: true
 env:
   global:
-  - secure: hI1Uc20pz/JSSYw34Z2YjiXkSytku9UNfWPt8LTMTqZtL0DuNLrMhqzyVmT3us2Sb6+8NNGq8Ga+MIIhnJZEQJZ7Y+itMPr+2bML7JZ8kmrHeGCOl7XLXUxBfLe6JT7YxAJj6zk/H8SYwo9dF3ml1jOCpejzFB2a5zroEeAlNFw=
-script: mvn clean install sonar:sonar -Dsonar.login=$SONAR_TOKEN
+  - secure: kw+KrixHBwvVCx0wc9X7qnZf2W0v41+LqKtwjz38Bi5bZIj2ySM3T08s/ttQomEgft1MkdO2hzajvQFVWjjlXIX9vdMSlKVwQdYuMtRja2jSvZJ9TOEXOuPzWmL/ZSCNONXAcdcTb3j4CRpKT1bCUaoVTP22z5EnNE+ctEmWwbk=
+  - secure: m2LIGb+n/4X7msu2hRErvR8B52YXUBEI9W4z6v4AlVY7cB7KKlorOJUv036STkEpQ5AmLypOAE47f83n8GC1EUyDXC/0NjKue10alBgEPgHZJzmC4PeeZQ/3VfBp+YY/Pp2lWjs3rRCCzY4tcVYDg5zg+3EltTgh5RBew3BjnCo=
+before_install:
+- openssl aes-256-cbc -K $encrypted_dad7f948ebbf_key -iv $encrypted_dad7f948ebbf_iv
+  -in deploy-keys.tar.enc -out deploy-keys.tar -d
+install:
+- tar xf deploy-keys.tar -C $HOME && chmod go-rwx -R $HOME/.m2 $HOME/.ssh
+- mvn dependency:go-offline
+before_script:
+- mvn clean
+script:
+- mvn verify site sonar:sonar
+deploy:
+- provider: script
+  skip_cleanup: true
+  script: mvn deploy site-deploy
+  on:
+    branch: master
+- provider: script
+  skip_cleanup: true
+  script: printf 'scm.tag=%1s\nscm.url=scm:git:https://git@github.com/%2s.git' "${TRAVIS_TAG}"
+    "${TRAVIS_REPO_SLUG}" > release.properties && mvn release:perform
+  on:
+    tags: true
