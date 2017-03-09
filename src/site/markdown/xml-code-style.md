@@ -12,7 +12,7 @@ The XML rules apply only to hand written source XMLs.  This applies to
 </pre>
 
 * It should not contain any *tab* characters.
-* 4-space indent
+* 2-space indent *as of coding-standards 2.2*
 * It must end with a blank line.
 * Must not have any trailing spaces.
 
