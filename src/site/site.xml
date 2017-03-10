@@ -9,6 +9,7 @@
     <menu name="Coding standards">
       <item href="./support-levels.html" name="Support levels"/>
       <item href="./java-code-style.html" name="Java code style"/>
+      <item href="./markdown-style.html" name="Markdown style"/>
       <item href="./xml-code-style.html" name="XML code style"/>
       <item href="./properties.html" name="Build properties"/>
       <item href="./checkstyle.html" name="Checkstyle rules"/>
