@@ -14,9 +14,7 @@ developers.
 
 [m2e-codestyle-maven-plugin][5] will also reformat the code using the formatting
 rules only (i.e. cleanup rules are not executed) during builds to ensure that
-formatting is consistent much like [Jalopy][6] would
-have done.  [Jalopy][6] would've been more ideal had it not been for lack
-of development on the [Jalopy][6] project.
+formatting is consistent.
 
 These rules are codified as XMLs that can be imported into Eclipse as-is.
 
@@ -179,6 +177,5 @@ notes and formatting should be left the way they understood it to be.
 [3]: ./findbugs.html
 [4]: http://eclipse.org/m2e/
 [5]: http://site.trajano.net/m2e-codestyle-maven-plugin/
-[6]: http://jalopy.sourceforge.net/
 [7]: http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
 

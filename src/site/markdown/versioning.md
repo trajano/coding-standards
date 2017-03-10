@@ -26,20 +26,9 @@ Development snapshots add a `-SNAPSHOT` specifier at the end.
 
     [MAJOR].[MINOR].[PATCH]-SNAPSHOT
 
-### OSS Contribution
-
-There may be times when a change to an OSS package is needed.  Contributions
-are versioned with a `-trajano-[n]` specifier at the end where `n` is
-an internal ID count.
-
-    [UPSTREAM_VERSION]-trajano-[n]
-
-These contributions will be deprecated as soon as the patch get merged to a
-released upstream version and are ingored in the [version rules][].
-
 ### POM specific rule
 
-For POM only projects, a single digit is used to denote the version with a 
+For POM only projects, a single digit is used to denote the version with a
 point version representing bugfixes on POMs released to central.
 
 This rule does not apply to multi-module project root POMs.
