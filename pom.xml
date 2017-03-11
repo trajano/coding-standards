@@ -4,12 +4,13 @@
   <parent>
     <groupId>net.trajano</groupId>
     <artifactId>trajano</artifactId>
-    <version>13</version>
+    <version>14-SNAPSHOT</version>
   </parent>
   <artifactId>coding-standards</artifactId>
   <version>2.2.1-SNAPSHOT</version>
   <name>Coding Standards</name>
   <description>This provides the configuration used by the code analysis plugins.</description>
+  <!-- 
   <url>http://site.trajano.net/${repo.id}/</url>
   <scm>
     <connection>scm:git:https://github.com/trajano/${repo.id}.git</connection>
@@ -17,6 +18,7 @@
     <tag>HEAD</tag>
     <url>https://github.com/trajano/${repo.id}</url>
   </scm>
+   -->
   <distributionManagement>
     <site>
       <id>trajano-site</id>
