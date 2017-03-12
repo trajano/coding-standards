@@ -13,6 +13,8 @@ cache:
 addons:
   apt:
     packages:
+    - ca-certificates
+    - ca-certificates-java
     - graphviz
   sonarqube: true
 env:
