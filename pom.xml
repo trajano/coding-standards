@@ -31,21 +31,5 @@
         <filtering>true</filtering>
       </resource>
     </resources>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>net.trajano.mojo</groupId>
-          <artifactId>cleanpom-maven-plugin</artifactId>
-          <version>1.2.1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-        <artifactId>wagon-ssh</artifactId>
-        <version>2.12</version>
-      </extension>
-    </extensions>
   </build>
 </project>
