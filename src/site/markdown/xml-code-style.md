@@ -19,4 +19,4 @@ The XML rules apply only to hand written source XMLs.  This applies to
 XML files are formatted using the [cleanpom-maven-plugin:cleanxml][1] goal should
 satisfy the XML standards.
 
-[1]: http://site.trajano.net/cleanpom-maven-plugin.
+[1]: http://site.trajano.net/cleanpom-maven-plugin

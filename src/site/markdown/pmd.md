@@ -6,7 +6,7 @@ that are ignored:
 
 * *[DontImportSun](http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/controversial.html#DontImportSun)*: There are some valid occurrences that `sun` libraries
   are needed in a large application.
-* *[MoreThanOneLogger](pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/logging-java.html#MoreThanOneLogger)*: There will be occasions that another logger will be
+* *[MoreThanOneLogger](http://pmd.sourceforge.net/pmd-5.3.0/pmd-java/rules/java/logging-java.html#MoreThanOneLogger)*: There will be occasions that another logger will be
   needed, a good one would be to separate fine level debug messages, the 
   main debug log and business audit logs.
 
