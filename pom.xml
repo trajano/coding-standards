@@ -10,6 +10,10 @@
   <version>2.2.1-SNAPSHOT</version>
   <name>Coding Standards</name>
   <description>This provides the configuration used by the code analysis plugins.</description>
+  <url>http://site.trajano.net/${repo.id}/</url>
+  <scm>
+    <url>https://github.com/trajano/${repo.id}</url>
+  </scm>
   <distributionManagement>
     <site>
       <id>trajano-site</id>
