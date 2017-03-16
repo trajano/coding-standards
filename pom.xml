@@ -31,5 +31,14 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <configuration>
+          <rulesUri>file:///${basedir}/src/site/resources/maven-version-rules.xml</rulesUri>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
