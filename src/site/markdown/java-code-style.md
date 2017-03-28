@@ -1,20 +1,13 @@
 Java code style
 ===============
 
-The code styles are generally enforced by the [Checkstyle rules][1],
-[PMD rules][2] and [FindBugs exceptions][3].  In addition, on the [M2E][4]
-environment, the [m2e-codestyle-maven-plugin][5] was developed to set up
-the general coding styles used by the organization.  These code styles
-are automatically applied on Save actions on the Eclipse IDE where
-technically possible.
+The code styles are  enforced by SonarQube rather than CheckStyle, PMD or Findbugs.  In addition, on the [M2E][4] environment, the [m2e-codestyle-maven-plugin][5] was developed to set up the general coding styles used by the organization.  These code styles are automatically applied on Save actions on the Eclipse IDE where technically possible.
 
 The intent of this code style implementations is primarily to make merges
 easier by leaving the formatting and sort order out of the hands of the
 developers.
 
-[m2e-codestyle-maven-plugin][5] will also reformat the code using the formatting
-rules only (i.e. cleanup rules are not executed) during builds to ensure that
-formatting is consistent.
+Java and XML code artifacts are also formatted by [m2e-codestyle-maven-plugin][5] and [cleanpom-maven-plugin][6] during a build to ensure consistency.  Note that [m2e-codestyle-maven-plugin][5] will  reformat the code using the formatting rules only (i.e. cleanup rules are not executed).
 
 These rules are codified as XMLs that can be imported into Eclipse as-is.
 
@@ -177,5 +170,6 @@ notes and formatting should be left the way they understood it to be.
 [3]: ./findbugs.html
 [4]: http://eclipse.org/m2e/
 [5]: http://site.trajano.net/m2e-codestyle-maven-plugin/
+[6]: http://site.trajano.net/cleanpom-maven-plugin/
 [7]: http://en.wikipedia.org/wiki/Indent_style#Variant:_1TBS
 
