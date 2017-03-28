@@ -7,13 +7,21 @@
 FindBugs exclusions
 
 	These rules are used by the 
-	{{{http://mojo.codehaus.org/findbugs-maven-plugin/}FindBugs Maven plugin}}.
+	{{{http://gleclaire.github.io/findbugs-maven-plugin/}FindBugs Maven plugin}}.
 
-	For FindBugs, only one rule is excluded:
+	For FindBugs, only two rules are excluded:
 
 +------------------------------+
 NM_SAME_SIMPLE_NAME_AS_INTERFACE
 +------------------------------+
+
+	Ignore this bug pattern because generally the interface representing
+	the WebService would match the class of the implementation so the name would
+	appear correctly on the generated endpoint URL.
+
++-------------------------------+
+NM_SAME_SIMPLE_NAME_AS_SUPERCLASS
++-------------------------------+
 
 	Ignore this bug pattern because generally the interface representing
 	the WebService would match the class of the implementation so the name would
