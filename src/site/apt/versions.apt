@@ -7,13 +7,13 @@
 Maven version rules
 
 	These {{{./maven-version-rules.xml}rules}} are used by the
-	{{{http://mojo.codehaus.org/versions-maven-plugin/}Versions Maven plugin}}.
+	{{{http://www.mojohaus.org/versions-maven-plugin/}Versions Maven plugin}}.
 
 	These are kept as part of the site as the plugin only supports
-	{{{http://mojo.codehaus.org/versions-maven-plugin/version-rules.html}locating
+	{{{http://www.mojohaus.org/versions-maven-plugin/version-rules.html}locating
 	the rules}} from a URI.
 
-	The {{{http://mojo.codehaus.org/versions-maven-plugin/}Versions Maven plugin}}
+	The {{{http://www.mojohaus.org/versions-maven-plugin/}Versions Maven plugin}}
 	can be configured as follows:
 
 +------------+
