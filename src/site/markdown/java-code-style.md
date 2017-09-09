@@ -55,8 +55,8 @@ Code scope is denoted consistently by moving forward by only
 
 There is a limit of one for consecutive blank lines and a blank line is
 introduced at the beginning of the method.  Ideally there would be a blank
-line before the end of the method, but the Eclipse formatter at present
-does not support this option.
+line before the end of the method, but the [Eclipse formatter at present
+does not support this option](https://bugs.eclipse.org/bugs/show_bug.cgi?id=522089).
 
 ### Line breaks
 
