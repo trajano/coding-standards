@@ -4,7 +4,7 @@
   <parent>
     <groupId>net.trajano</groupId>
     <artifactId>trajano</artifactId>
-    <version>14-SNAPSHOT</version>
+    <version>16-SNAPSHOT</version>
   </parent>
   <artifactId>coding-standards</artifactId>
   <version>3.0.0-SNAPSHOT</version>
